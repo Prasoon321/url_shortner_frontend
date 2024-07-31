@@ -49,7 +49,9 @@ const Home = () => {
       if (response && response.data) {
         console.log(response.data.id);
         setShortId(response.data.id);
-        setUrl(`https://url-shortner-gtxo.onrender.com/${response.data.id}`);
+        setUrl(
+          `https://url-shortner-gtxo.onrender.com/api/${response.data.id}`
+        );
       }
     } catch (error) {
       console.log(error.response.data.error);
