@@ -1,0 +1,96 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    /* Required for absolute positioning of menu */
+}
+
+.navLogo {
+    font-size: 1.5em;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    padding: 10px;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navLink:hover {
+    color: #ff6347;
+}
+
+/* Styles for the menu sliding in from the top */
+.navMenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+    /* Initially hidden */
+}
+
+.navMenu.active {
+    display: flex;
+    transform: translateY(0);
+    /* Slide down into view */
+}
+
+.navItem {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.navLink {
+    color: #fff;
+    display: block;
+}
+
+.closeMenu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+}
+
+.closeButton {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navMenu.active {
+        display: flex;
+    }
+}
